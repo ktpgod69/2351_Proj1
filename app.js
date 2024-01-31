@@ -1,21 +1,33 @@
-let life = 90; // this is my life bar number
-        
-life = life - 30; 
+const name = "AEG Designs";
+const gamer = "Ktp Streaks";
 
-//60
-
- life = life - 20;
-
-//40
- life = "ktp dev"; // Name displayed in game string
-
- life = true; // Boolean
-
- life = 40;
-
-//object synbull
+function adder(num1, num2) {
+console.log(num1 + num2);
+console.log(num1 - num2);
+}
 
 
+function toUpper(text) {
+    const upperCased = text.toUpperCase();
+    console.log(upperCased);
+}
+
+function logger() {
+    
+console.log("Gaming Sesh");
+console.log("Gaming Sesh");
+console.log("Gaming Sesh");
+console.log("Gaming Sesh");
+}
 
 
-console.log(life);
+
+logger();
+adder(35, 9);
+adder(10, 7);
+adder(35, 12);
+toUpper(name);
+toUpper(gamer);
+
+
+
