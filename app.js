@@ -1,50 +1,44 @@
-const names = ["Levi", "Olivia", "Ellisa", "Priscilla", "George", "Robert", "Rj"];
+const movielist = ["John Wick", "Scream", "Halloween", "Fury"];
 
-for (name of names) {
-    console.log(name);
-    if (name === "Olivia") {
-        console.log("Olivia is running for President");
-        break;
+const rankings = ["1", "2", "3", "4"];
+console.log(movielist);
+console.log(rankings);
+
+movielist.push("Drive");
+
+console.log(movielist);
+
+const John = movielist.indexOf("John Wick");
+console.log(movielist[John]);
+
+const user = {
+    name: "Henry",
+    age: 30,
+    married: true,
+    favoritemovies: ["Drive", "Halloween", "It Follows", "Pearl Harbor", "The Mummy"],
+
+    sayName: function() {
+        console.log(this.name);
     }
+};
+
+user.sayName();
+
+function sayimmarried() {
+    console.log(`Am i married...true or false? ${true}`);
 }
 
-let loading = 10;
+sayimmarried();
 
-while(loading < 80) {
-    console.log("game is still loading");
+console.log(user.favoritemovies);
 
-    loading++;
+function movies() {
+    console.log()
 }
 
-const text = document.querySelector(".title");
-const changeColor = document.querySelector(".changeColor");
 
-text.style.color = "teal"
-text.style.backgroundColor = "pink";
 
-text.classList.add("change");
+//This
+window.apples();
 
-changeColor.addEventListener("click", function() {
-    text.classList.toggle("change");
-});
-const userlist = document.querySelectorAll(".name-list");
-const listinput = document.querySelector(".listinput");
-const addListBtn = document.querySelector(".addListBtn");
-
-addListBtn.addEventListener("click", function() {
-//Create an Li out of thin air
-const newLi = document.createElement("Li");
-const liContent = document.createTextNode("listInput.value");
-//Add the input value inside that new Li
-newLi.appendChild(licontent);
-//Attaching the Li to the user list
-userlist.appendChild(newLi);
-});
-
-for (user of userList) {
-    user.addEventListener("click", function() {
-        this.style.color = "pink";
-        console.log(this);
-      });
-    }
-
+console.log(this);
