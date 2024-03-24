@@ -1,44 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./style.css" />
-    <title>Rock paper and scissors</title>
-</head>
+  <head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Web APIs</title>
+  </head>
 <body>
+  <h1>Chuck Norris Location</h1>
+  <img src="chuck.jpg" alt="chuck" width="100" height="100">
+<p>Click the button to find out.</p>
+
+<button onclick="getLocation()">Click if you dare</button>
+
+<p id="demo"></p>
+
+<script>
+const x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.watchPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
     
-    <section class="game">
-        <div class="score">
-            <div class="player score">
-                <h2>Player</h2>
-                <p>0</p>
-            </div>
-            <div class="computer-score">
-                <h2>Computer</h2>
-                <p>0</p>
-            </div>
-        </div>
+function showPosition(position) {
+    x.innerHTML="Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+</script>
 
-        <div class="intro">
-            <h1>Rock Paper and Scissors</h1>
-            <button>Let's Play</button>
-        </div>    
-      <div class="match">
-        <h2 class="winner">Choose an option</h2>
-        <div class="hands">
-            <img class="player-hand" src="./assets/rock.png" alt="">
-            <img class="computer-hand" src="./assets/rock.png" alt="">
-        </div>
-        <div class="options">
-            <button class="rock">rock</button>
-            <button class="paper">paper</button>
-            <button class="scissors">scissors</button>
-        </div>
-        </div>
-    </section>
 
-    <script src="./app.js"></script>
+
+
+
+<h2>Number of employees for Costco</h2>
+<img src="costco.jpg" alt="costco" width="150" height="100">
+<p>Count numbers: <output id="result"></output></p>
+<button onclick="startWorker()">Add Worker</button> 
+<button onclick="stopWorker()">Remove Worker</button>
+
+<script>
+let w;
+
+function startWorker() {
+  if(typeof(w) == "undefined") {
+    w = new Worker("demo_workers.js");
+  }
+  w.onmessage = function(event) {
+    document.getElementById("result").innerHTML = event.data;
+  };
+}
+
+function stopWorker() { 
+  w.terminate();
+  w = undefined;
+}
+</script>
+
+
+
+
+
+
+
+<h2>Game of Fate</h2>
+<img src="roulette.jpg" alt="roulette" width="150" height="150">
+
+<p>Enter a number for a chance to win:</p>
+
+<input id="id1" type="number" max="100">
+<button onclick="myFunction()">OK</button>
+
+<p>If the number is greater than 100 (the input's max attribute), to be the winner.</p>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  let text;
+  if (document.getElementById("id1").validity.rangeOverflow) {
+    text = "Value too large";
+  } else {
+    text = "Input OK";
+  } 
+  document.getElementById("demo").innerHTML = text;
+}
+</script>
+<h1>Fetch example</h1>
+<p id="fetch.png">download...</p>
+
+<img src="fetch.png" alt="fetch" width="550" height="100"
+<script>
+      
+</script>
+<script src="app.js"></script>
+</body>
 </html>
-    
+
+
+
