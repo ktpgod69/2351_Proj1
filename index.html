@@ -3,7 +3,7 @@
   <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <title>Web APIs</title>
   </head>
 <body>
@@ -13,7 +13,6 @@
 
 <button onclick="getLocation()">Click if you dare</button>
 
-<p id="demo"></p>
 
 <script>
 const x = document.getElementById("demo");
@@ -32,17 +31,13 @@ function showPosition(position) {
 }
 </script>
 
-
-
-
-
 <h2>Number of employees for Costco
   
 </h2>
 <img src="costco.jpg" alt="costco" width="150" height="100">
-<p>Count numbers: <output id="result">6</output></p>
-<button onclick="startWorker()">Add Worker</button> 
-<button onclick="stopWorker()">Remove Worker</button>
+<p>Count numbers: <output id="result"></output></p>
+<button onclick="startWorker()">Start Worker</button> 
+<button onclick="stopWorker()">Stop Worker</button>
 
 <script>
 let w;
@@ -60,6 +55,7 @@ function stopWorker() {
   w.terminate();
   w = undefined;
 }
+<p id="demo"></p>
 </script>
 
 
